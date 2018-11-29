@@ -5,6 +5,7 @@
  */
 package frame;
 
+import java.util.Objects;
 import javax.swing.Box;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -97,21 +98,15 @@ public class main extends javax.swing.JFrame {
 
     private void BinputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinputActionPerformed
         // TODO add your handling code here
-        JTextField nama = new JTextField(10);
+        JTextField nama = new JTextField();
         String[] i = {"apel","manggah","melon"};
         JComboBox buah = new JComboBox(i);
-        javax.swing.GroupLayout l = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(l);
-        //l.setHorizontalGroup(l.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(l.createSequentialGroup().addContainerGap().addComponent(new JLabel("nama")).addContainerGap().addComponent(nama)));
         
-        JPanel p = new JPanel();
-        p.add(new JLabel("nama"));
-        p.add(nama);
-        //p.add(Box.createVerticalBox());
-        
-        p.add(new JLabel("buah kesukaan"));
-        p.add(buah);
-        JOptionPane.showConfirmDialog(null, p, "masukan nama", JOptionPane.OK_CANCEL_OPTION);
+        Object[] f = {
+            "Nama", nama,
+            "Buah kesukaan",buah
+        };
+        JOptionPane.showConfirmDialog(null, f, "input dialog", JOptionPane.OK_CANCEL_OPTION);
         Tnama.setText(nama.getText());
         Tkesukaan.setText(buah.getSelectedItem().toString());
     }//GEN-LAST:event_BinputActionPerformed
